@@ -1,0 +1,63 @@
+<section class="py-3">
+
+
+
+  <div class="card" >
+    <img [src]="item.imgf" class="card-img-top img-fluid " alt="...">
+    <div class="card-body">
+      <h3 class="card-title pl-3">{{item.name}}</h3>
+
+
+
+
+      <div class="d-flex justify-content-between align-items-center pb-4">
+        <div class="d-flex ml-2">
+          <h3 class="card-title  text-danger"><span>SAR  </span>{{item.price}}</h3>
+        </div>
+        <button type="button" class="btn btn-info"  (click)="popup = true">
+          Details
+         </button>
+      </div>
+
+
+
+<div class="col-12">
+       <div class="overlay" *ngIf="popup">
+           <div class="popup">
+             <div class="py-1">
+               <h2 class="pl-2">{{item.name}}</h2>
+               <a class="close" (click)="popup = false">&times;</a>
+              </div>
+               <hr>
+               <div class="content">
+               <img [src]="item.imgde" class="img-fluid" alt="">
+               </div>
+           </div>
+       </div>
+
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+<div class="d-flex ml-2">
+<input type="number" class="form-i w-100 inp-s mb-1"appHi aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+
+min="0"
+#ItemCount
+[value]="getItemnum()"
+>
+</div>
+<button  class="btn btn-success mb-1 btn-sm p-2"
+(click)="$event.stopPropagation() ;addTocart(ItemCount.value)"
+>
+<span *ngIf="item.itemCount>0">Update Cart</span>
+<span *ngIf="item.itemCount==0">Add To Cart</span>
+</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+</section>
+

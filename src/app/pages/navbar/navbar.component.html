@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-transparent fixed-top" [class.header_change]="header_varibale">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/layout/home" ><img [src]="img" class="img-icon" alt=""></a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars text-dark" aria-hidden="true"></i></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link font-s text-dark p-2 mr-4"   routerLinkActive='active' [class.textc]="textc"  routerLink="/layout/home" >Home </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link font-s text-dark p-2"  [class.textc]="textc"   routerLinkActive='active'  routerLink="/layout/products">Review Orders</a>
+          </li>
+
+
+
+
+
+        </ul>
+
+    </div>
+    <div class="nav-item dropdown leftsmall">
+      <a class="nav-link arrow_nav dropdown-toggle btn " data-toggle="dropdown"  role="button"
+          aria-haspopup="true" aria-expanded="false"><a class="btn"    ><span class="sp-i"></span><i class="fa fa-shopping-cart text-dark font-c" [class.textc]="textc"  aria-hidden="true"></i><span class="bg-info text-white round-i font-i" *ngIf="cartservice.cartItemsCount>0 "
+            >{{cartservice.cartItemsCount}}</span></a>
+        </a>
+      <div  class="dropdown-menu ">
+
+        <a class="dropdown-item p-3" *ngFor="let item of cartservice.cartItems">
+          <span>
+            <img [src]="item.imgf" width="80" class="img-fluid" alt="">
+            <span><button class="ntm action-btn btn-button text-white font" (click)="$event.stopPropagation(); updatecartitem('-',item)"><i class="fa fa-minus text-white" aria-hidden="true"></i></button>
+              <span class="font1">{{item.itemCount}}</span>
+               <button class="ntm action-btn btn-s font" (click)="$event.stopPropagation(); updatecartitem('+',item)"><i class="fa fa-plus text-white" aria-hidden="true"></i></button>
+             </span>
+          </span>
+                      </a>
+                      <h4>Total Price :{{cartservice.cartitemsprice}}</h4>
+                      <button class="btn btn-info ml-2"  routerLink="/layout/checkout">Buy Now</button>
+
+      </div>
+  </div>
+    <div class="nav-item dropdown leftsmall">
+        <a class="nav-link arrow_nav dropdown-toggle btn " data-toggle="dropdown"  role="button"
+            aria-haspopup="true" aria-expanded="false"><i class="fa fa-user user-s text-dark "  [class.textc]="textc"  aria-hidden="true"></i></a>
+        <div  class="dropdown-menu ">
+            <a class="dropdown-item" ><a class="btn btn-info"   (click)="logout()">logout</a></a>
+
+        </div>
+
+
+</div>
+  </div>
+</nav>
+
+<div class="prod">
+  <a class="btn btn-light"  routerLink="/layout/products" (click)="togglesidebar()"><span class="sp-i"></span><i class="fa fa-shopping-cart text-dark font-c"  aria-hidden="true"></i><span class="bg-info text-white round-i font-i" *ngIf="cartservice.cartItemsCount>0 ">{{cartservice.cartItemsCount}}</span></a>
+
+</div>
+
+

@@ -1,0 +1,82 @@
+
+<div class="container mt-4 ">
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form [formGroup]='loginform' (ngSubmit)='checkout()'>
+
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname"    ngModel   formControlName='email' placeholder="example Ahmed">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email"    ngModel   formControlName='email' placeholder="Ahmed@example.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address"    ngModel   formControlName='email' placeholder="542 W. 15th Street">
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city"    ngModel   formControlName='email' placeholder="New York">
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state"  appHi  ngModel   formControlName='email' placeholder="NY">
+                </div>
+                <div class="col-50">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" appHi   ngModel   formControlName='email' placeholder="10001">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname"  appWrite  ngModel   formControlName='email' placeholder="ahmed More Doe">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" appHi   ngModel   formControlName='email' placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth"   ngModel   formControlName='email' placeholder="September">
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear"  appHi  ngModel   formControlName='email' placeholder="2021">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv"  appHi  ngModel   formControlName='email' placeholder="352">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          </label>
+
+          <button type="submit" class="btn" >Continue to checkout</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-25">
+      <div class="container">
+        <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b class="text-info">{{cartservice.cartItemsCount}}</b> </span></h4>
+        <div class="" *ngFor="let item of cartservice.cartItems">
+        <p><a><img [src]=" item.imgf" width="40" alt=""></a> <span class="price">{{item.price}}</span></p>
+
+      </div>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>{{cartservice.cartitemsprice}}</b></span></p>
+      </div>
+
+    </div>
+  </div>
+  </div>
+

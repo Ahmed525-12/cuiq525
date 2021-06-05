@@ -1,0 +1,68 @@
+
+.img-s{
+  width: 100%;
+  height: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-i{
+  flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+header{
+  margin-top: -48px;
+}
+
+.i_button_top{
+  display: inline-block;
+  color: #fff !important;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+
+}
+.a_button_top{
+  display: none;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 33px;
+  text-align: center;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 4500;
+  opacity: .5;
+  cursor: pointer;
+}
+.a_button_top:hover{
+  background: rgb(0, 0, 0);
+  opacity: .5;
+}
+
+
+/* ----------------------------------------------------------------end top button--------------------------------- */
+.ashow{
+  display: block;
+  transition: display 0.5s linear;
+}
+
+
