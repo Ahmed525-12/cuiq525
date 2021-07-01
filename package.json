@@ -7,9 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -21,9 +19,11 @@
     "@angular/platform-browser": "~11.2.13",
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "bootstrap": "^5.0.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
+    "lite-server": "^2.6.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
